@@ -1,0 +1,64 @@
+<h1>Update Product</h1>
+<form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+  <div class="row">
+    <div class="col-md-6 col-sm-12 form-group">
+      <label>Product Name</label>
+      <input type="text" name="productName" [(ngModel)]="product.productName" class="form-control" required>
+    </div>
+
+    <div class="col-md-6 col-sm-12 form-group">
+      <label>Product Owner Name</label>
+      <input type="text" name="productOwnerName" [(ngModel)]="product.productOwnerName" class="form-control" required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-sm-12 form-group">
+      <label>Scrum Master Name</label>
+      <input type="text" name="scrumMasterName" [(ngModel)]="product.scrumMasterName" class="form-control" required>
+    </div>
+
+    <div class="col-md-6 col-sm-12 form-group dev-form-group">
+      <label>Developers:</label>
+
+      <div class="input-group mb-3">
+        <input type="text" id="developerName" name="developerName" [(ngModel)]="developerName" class="form-control">
+        <button type="button" class="btn btn-outline-secondary" (click)="addDeveloper()">Add Developer</button>
+        <div class="col-md-12 form-group error-message" *ngIf="errorMessage">
+          <p class="mb-0">{{ errorMessage }}</p>
+        </div>
+      </div>
+      <ul>
+        <li *ngFor="let developer of developers; let i=index">
+          <div class="input-group mb-3 mt-3">
+            <input type="text" id="developer{{i}}" name="developer{{i}}" [(ngModel)]="developers[i]" class="form-control" required>
+            <button type="button" class="btn btn-outline-secondary" (click)="removeDeveloper(i)">Remove</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-6 col-sm-12 form-group">
+      <label>Methodology</label>
+      <select name="methodology" [(ngModel)]="product.methodology" class="form-control" required>
+        <option value="Agile">Agile</option>
+        <option value="Waterfall">Waterfall</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12 form-group">
+      <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Update</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <a  class="btn btn-primary" routerLink="/">Back to Products</a>
+    </div>
+  </div>
+</form>

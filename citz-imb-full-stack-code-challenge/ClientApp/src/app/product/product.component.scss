@@ -1,0 +1,52 @@
+tr {
+  &:hover {
+    background-color: lightblue;
+  }
+}
+
+.delete {
+  background-color: white;
+  color: red;
+  &:hover {
+    background-color: lightcoral;
+    color: black;
+  }
+}
+
+.creat-btn-warpper {
+    margin: 40px 0;
+}
+
+.create-product {
+  text-decoration: none;
+  padding: 15px;
+  border: solid 1px #1b6ec2;
+  border-radius: 6px;
+  margin-top: 20px;
+  background-color: white;
+  color: #1b6ec2;
+
+  &:hover {
+    background-color: #1b6ec2;
+    color: white;
+  }
+}
+
+.search {
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.create-search-warpper {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+h6 {
+    margin-top: 10px;
+}

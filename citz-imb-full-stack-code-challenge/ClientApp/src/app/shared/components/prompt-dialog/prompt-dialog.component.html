@@ -1,0 +1,6 @@
+<p-dialog [(visible)]="display" [header]="header" [modal]="true" [maximizable]="false" appendTo="body">
+  <p [innerHTML]="message"></p>
+  <p-footer>
+    <button type="button" pButton (click)="clickOk()" label="OK"></button>
+  </p-footer>
+</p-dialog>

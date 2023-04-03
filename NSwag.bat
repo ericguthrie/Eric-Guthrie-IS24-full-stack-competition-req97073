@@ -1,0 +1,1 @@
+"..\nswag 3.8.2\netcore31\dotnet-nswag" run "WNNB.nswag"
